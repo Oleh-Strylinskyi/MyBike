@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -199,9 +201,9 @@ LOGGING = {
     },
 }
 
-# DEFAULT_DATE_FORMAT = '%d-%m-%Y'
-#
-# AUTH_USER_MODEL = 'authentication.User'
+DEFAULT_DATE_FORMAT = '%d-%m-%Y'
+
+AUTH_USER_MODEL = 'authentication.User'
 # LOGIN_URL = 'auth:login'
 # LOGIN_REDIRECT_URL = 'dashboard'
 # LOGOUT_REDIRECT_URL = 'registration:login'
