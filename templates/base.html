@@ -45,10 +45,17 @@
                         </li>
                         <li class="nav-item">
                             <b>
-                                <a class="nav-link" id="velo" href="#" role="button">Корзина</a>
+                                <a class="nav-link" id="velo" href="#">Корзина</a>
                             </b>
                         </li>
                     </ul>
+                    <div style="margin-right:1rem">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'auth:logout' %}">Logout</a>
+                        {% else %}
+                            <a href="{% url 'auth:login' %}">Login</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </nav>
