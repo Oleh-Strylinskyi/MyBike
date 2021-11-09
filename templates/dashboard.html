@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<div>Congratulations! You have successfully logged in!</div>
+    {% if user.is_authenticated %}
+        <div>Congratulations! You have successfully logged in!</div>
 
-<div>Now you look at <b>Dashboard</b></div>
+        <div>Now you look at <b>Dashboard</b></div>
+    {% else %}
+        <div>You`re not authenticated</div>
+    {% endif %}
 {% endblock content %}
