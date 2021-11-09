@@ -6,7 +6,7 @@
         <div class="main container-fluid padding">
             <div class="block1">
                 {% for product in product_list %}
-                    <div href="{% url 'products:product-detail' product.id %}">
+                    <a href="{% url 'products:product-detail' product.id %}">
                         <img src="{{ product.image.url }}" width="470" height="370px" alt="">
                         <hr>
                         <h4>
@@ -14,7 +14,7 @@
                         </h4>
                         <p>Ціна: {{ product.price }} грн.</p>
                         <hr>
-                    </div>
+                    </a>
                 {% endfor %}
             </div>
         </div>
