@@ -4,6 +4,8 @@
 
 ### Django ###
 .data/
+assets/
+media/
 *.log
 *.pot
 *.pyc
