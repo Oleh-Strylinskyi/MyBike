@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import DetailView
-from django.views.generic.list import BaseListView
+from django.views.generic.list import BaseListView, MultipleObjectTemplateResponseMixin
 
 from products.models import Product
 
@@ -18,7 +18,7 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
         return get_object_or_404(self.model, pk=self.kwargs['pk'])
 
 
-class ProductListView(LoginRequiredMixin, BaseListView):
+class ProductListView(LoginRequiredMixin, MultipleObjectTemplateResponseMixin,  BaseListView):
     """Get list of products"""
     model = Product
     # list_filter_class = 'put here some Filter class you created in filter.py'
