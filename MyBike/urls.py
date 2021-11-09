@@ -18,7 +18,8 @@ from django.urls import path, include
 from authentication.views import DashboardView
 
 urlpatterns = [
+    path('', DashboardView.as_view(), name='dashboard'),
     path('admin/', admin.site.urls),
     path('auth/', include('authentication.urls')),
-    path('', DashboardView.as_view(), name='dashboard'),
+    path('products/', include('products.urls')),
 ]
