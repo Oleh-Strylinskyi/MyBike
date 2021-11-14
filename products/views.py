@@ -30,9 +30,9 @@ class AddToBasketView(LoginRequiredMixin, View):
         if not created:
             basket_item.quantity += 1
             basket_item.save()
-            messages.info(request, "This item quantity was updated.")
+            messages.info(request, "Товар оновлено.")
         else:
-            messages.info(request, "This item was added to your basket.")
+            messages.info(request, "Товар було додано в корзину.")
             pass
         return redirect("products:product-detail", pk)
 

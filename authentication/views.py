@@ -12,3 +12,7 @@ class CustomLogoutView(views.LogoutView):
 
 class DashboardView(TemplateView):
     template_name = 'dashboard.html'
+
+
+class WorkshopView(TemplateView):
+    template_name = 'workshop.html'
