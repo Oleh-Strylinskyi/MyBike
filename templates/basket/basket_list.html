@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content">
+        <!-- Велосипеди -->
+        <div class="main container-fluid padding">
+            <div class="block1">
+                {% for basket_item in basketitem_list %}
+{#                    <img src="{{ product.image.url }}" width="470" height="370px" alt="">#}
+                    <a href="{% url 'products:product-detail' basket_item.product.pk %}">
+                        <h4>
+                            {{ basket_item.product.name }}
+                        </h4>
+                    </a>
+                    <p>Кількість: {{ basket_item.quantity }} шт.</p>
+                    <p>Ціна: {{ basket_item.product.price }} грн.</p>
+                    <p>Сумарно: {{ basket_item.item_price }} грн.</p>
+
+                    <form action="{% url 'basket:remove-basket-item' basket_item.pk %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Вилучити з кошика">
+                    </form>
+                {% endfor %}
+            </div>
+            <div>
+                <p>Разом: {{ basket.total_price }} грн.</p>
+            </div>
+        </div>
+        <!-- ./Велосипеди -->
+    </div>
+{% endblock content %}
