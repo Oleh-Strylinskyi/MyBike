@@ -4,8 +4,8 @@
     <div class="content">
         <!-- Велосипеди -->
         <div class="main container-fluid padding">
-            <div class="block1">
-                {% for basket_item in basketitem_list %}
+            {% for basket_item in basketitem_list %}
+                <div class="block1">
 {#                    <img src="{{ product.image.url }}" width="470" height="370px" alt="">#}
                     <a href="{% url 'products:product-detail' basket_item.product.pk %}">
                         <h4>
@@ -20,8 +20,8 @@
                         {% csrf_token %}
                         <input type="submit" value="Вилучити з кошика">
                     </form>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
             <div>
                 <p>Разом: {{ basket.total_price }} грн.</p>
             </div>

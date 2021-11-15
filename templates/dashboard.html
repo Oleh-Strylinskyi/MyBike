@@ -1,10 +1,60 @@
 {% extends 'base.html' %}
-{% block content %}
-    {% if user.is_authenticated %}
-        <div>Congratulations! You have successfully logged in!</div>
+{% load static %}
 
-        <div>Now you look at <b>Dashboard</b></div>
-    {% else %}
-        <div>You`re not authenticated</div>
-    {% endif %}
+{% block content %}
+    <div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/Carousel_1.jpg' %}" class="d-block " id="photo1" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/Carousel_2.jpg' %}" class="d-block " id="photo2" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/Carousel_3.jpg' %}" class="d-block " id="photo3" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- ./Карусель -->
+
+        <!-- Наш опис -->
+        <div class="aboutus">
+            <div id="lineabout">Про нас</div>
+            <div class="phototext">
+                <div class="text">«Bikes Lviv» – мультибрендовий магазин велосипедів та високоякісного взуття. Нашими партнерами є такі компанії-лідери, як Romet, Creon, Cannondale, AXA, Demon, Dragon, Capita, COAL, Emerica, Etnies, Union, Deeluxe, SP та інші. Магазин
+                    «Bikes Lviv» працює на українському ринку вже понад 1 рік і зараз продовжує рости та динамічно розвиватися : постійно розширюється асортимент товарів та брендів, покращується якість обслуговування клієнтів. Доставка товарів по Україні
+                    складає лише 1-3 дні. «Bikes Lviv» у своїй роботі орієнтується на важливі життєві цінності : фізичне здоров’я, сила духу, постійний рух та розвиток своїх вмінь. Ми також займаємось спортом та закликаємо і Вас долучитись!
+                </div>
+                <img src="https://toronto.citynews.ca/wp-content/blogs.dir/sites/10/2019/07/NYBZ267-710_2019_065333.jpg" class="aboutus_photo" alt="bikes">
+            </div>
+        </div>
+    </div>
+    <!-- ./Наш опис -->
+
+    <!-- Огляд Новинок -->
+    <div class="video">
+        <div id="videostart">Огляд Новинок</div>
+        <div class="videotext">
+            <iframe width="545" height="315" src="https://www.youtube.com/embed/ZLyfzPn-CzI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe id="video2" width="545" height="315" src="https://www.youtube.com/embed/uz535wXkRJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="videotext1">
+            <iframe width="545" height="315" src="https://www.youtube.com/embed/jKArlxhxo34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!-- ./Огляд Новинок -->
 {% endblock content %}
