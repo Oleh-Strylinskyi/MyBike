@@ -9,6 +9,9 @@ class Basket(models.Model):
     is_active = models.BooleanField(default=True)
     order_date = models.DateField(null=True)
 
+    def __str__(self):
+        return f"{self.user}`s - {'active' if self.is_active else 'ordered'}"
+
     @property
     def total_price(self):
         return sum([item.item_price for item in self.items.all()])
