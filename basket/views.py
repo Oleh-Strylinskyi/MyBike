@@ -13,7 +13,7 @@ class RemoveBasketItemView(LoginRequiredMixin, View):
         basket, _ = Basket.objects.get_or_create(user=request.user, is_active=True)
         basket_item = get_object_or_404(BasketItem, id=pk)
         basket_item.delete()
-        messages.info(request, "Товар було вилучено з кошика.")
+        messages.info(request, "Товар вилучено з кошика.")
         return redirect("basket:basket-list")
 
 

@@ -32,7 +32,7 @@ class AddToBasketView(LoginRequiredMixin, View):
             basket_item.save()
             messages.info(request, "Товар оновлено.")
         else:
-            messages.info(request, "Товар було додано в корзину.")
+            messages.info(request, "Товар додано в корзину.")
             pass
         return redirect("products:product-detail", pk)
 
