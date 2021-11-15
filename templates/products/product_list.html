@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="content">
+    <div class="content-center">
         <!-- Велосипеди -->
         <div class="main container-fluid padding">
-            <div class="block1">
+            <div class="block1" style="margin: 30px">
                 {% for product in product_list %}
-                    <a href="{% url 'products:product-detail' product.id %}">
-                        <img src="{{ product.image.url }}" width="470" height="370px" alt="">
-                        <hr>
-                        <h4>
-                            {{ product.name }}
-                        </h4>
-                        <p>Ціна: {{ product.price }} грн.</p>
-                        <hr>
-                    </a>
+                    <div style="margin-left: 40px;margin-right: 40px">
+                        <a href="{% url 'products:product-detail' product.id %}">
+                            <img src="{{ product.image.url }}" width="470" height="370px" alt="">
+                            <hr>
+                            <h4>
+                                {{ product.name }}
+                            </h4>
+                            <p>Ціна: {{ product.price }} грн.</p>
+                            <hr>
+                        </a>
+                    </div>
                 {% endfor %}
             </div>
         </div>
