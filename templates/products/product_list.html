@@ -4,6 +4,11 @@
     <div class="content-center">
         <!-- Велосипеди -->
         <div class="main container-fluid padding">
+            <form method="get">
+                <input type="text" name="search" id="id_search" placeholder="Пошук" value="{{ filterset.form.search.value }}">
+                {{ filterset.form.ordering }}
+                <input type="submit" />
+            </form>
             <div class="block1" style="margin: 30px">
                 {% for product in product_list %}
                     <div style="margin-left: 40px;margin-right: 40px">
@@ -13,9 +18,11 @@
                             <h4>
                                 {{ product.name }}
                             </h4>
-                            <p>Ціна: {{ product.price }} грн.</p>
-                            <hr>
                         </a>
+                        <div>Виробник: {{ product.country_producer.name }}</div>
+                        <div>Вага: {{ product.weight }} кг.</div>
+                        <p>Ціна: {{ product.price }} грн.</p>
+                        <hr>
                     </div>
                 {% endfor %}
             </div>

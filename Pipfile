@@ -8,6 +8,7 @@ django = "*"
 environs = "*"
 psycopg2-binary = "*"
 pillow = "*"
+django-filter = "*"
 
 [dev-packages]
 
