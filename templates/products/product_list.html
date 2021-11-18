@@ -5,7 +5,7 @@
         <!-- Велосипеди -->
         <div class="main container-fluid padding">
             <form method="get">
-                <input type="text" name="search" id="id_search" placeholder="Пошук" value="{{ filterset.form.search.value }}">
+                <input type="text" name="search" id="id_search" placeholder="Пошук" value="{{ filterset.form.search.value|default:'' }}">
                 {{ filterset.form.ordering }}
                 <input type="submit" />
             </form>

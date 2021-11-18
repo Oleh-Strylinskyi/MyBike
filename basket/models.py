@@ -10,7 +10,7 @@ class Basket(models.Model):
     order_date = models.DateField(null=True)
 
     def __str__(self):
-        return f"{self.user}`s - {'active' if self.is_active else 'ordered'}"
+        return f'{self.id}'
 
     @property
     def total_price(self):
